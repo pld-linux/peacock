@@ -30,7 +30,7 @@ Gtk-XmHTML. Jest na licencji GPL.
 
 %build
 rm -f missing
-gettextize --copy --force
+%{__gettextize}
 aclocal -I macros
 %{__autoconf}
 %{__automake}
