@@ -1,8 +1,8 @@
 Summary:	Peacock, A HTML Editor for GTK+/GNOME
 Summary(pl):	Peacock - edytor HTML pod GTK+/GNOME
 Name:		peacock
-Version:	0.4
-Release:	1
+Version:	0.5
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/peacock/%{name}-%{version}.tar.gz
@@ -15,6 +15,7 @@ BuildRequires:	gdk-pixbuf-gnome-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtkhtml-devel >= 0.4
 BuildRequires:	libglade-devel >= 0.16
+BuildRequires:	pong-devel
 URL:		http://peacock.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,12 +33,15 @@ Gtk-XmHTML. Jest na licencji GPL.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+#%patch0 -p1
+#%patch1 -p1
 
 %build
+cat /usr/share/aclocal/intltool.m4 >> aclocal.m4
 rm -f missing
 %{__gettextize}
+intltoolize --copy --force
+#xml-i18n-toolize
 aclocal -I macros
 %{__autoconf}
 %{__automake}
