@@ -1,4 +1,5 @@
 Summary:	Peacock, A HTML Editor for GTK+/GNOME
+Summary(pl):	Peacock - edytor HTML pod GTK+/GNOME
 Name:		peacock
 Version:	0.2
 Release:	1
@@ -8,6 +9,8 @@ Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/peacock/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 URL:		http://peacock.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -19,6 +22,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Peacock is a HTML Editor for GTK+/GNOME. It supports most of basic
 HTML. It features Session Management and HTML Preview using the
 Gtk-XmHTML widget. It is licensed under GPL.
+
+%description -l pl
+Peacock jest edytorem HTML dla GTK+/GNOME. Obs³uguje wiêkszo¶æ podstaw
+HTML. Cechuj± go zarz±dzanie sesj± i podgl±d HTML przy u¿yciu widgetu
+Gtk-XmHTML. Jest na licencji GPL.
 
 %prep
 %setup -q
