@@ -12,7 +12,6 @@ BuildRequires:	gettext-devel
 URL:		http://peacock.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %define		_prefix		/usr/X11R6
 
 %description
@@ -52,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README AUTHORS NEWS TODO ChangeLog THANKS HACKING
 %attr(755,root,root) %{_bindir}/peacock
 %{_pixmapsdir}/peacock
 %{_applnkdir}/Office/Editors/peacock.desktop
