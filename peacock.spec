@@ -1,19 +1,24 @@
 Summary:	Peacock, A HTML Editor for GTK+/GNOME
 Summary(pl):	Peacock - edytor HTML pod GTK+/GNOME
 Name:		peacock
-Version:	0.2
-Release:	1
-License:	GPL
+Version:	0.5
+Release:	2
+License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/peacock/%{name}-%{version}.tar.gz
-Patch0:		%{name}-DESTDIR.patch
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	gettext-devel
+#BuildRequires:	autoconf
+#BuildRequires:	automake
+BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	gdk-pixbuf-gnome-devel
+#BuildRequires:	gettext-devel
+BuildRequires:	gtkhtml-devel >= 0.4
+BuildRequires:	libglade-gnome-devel >= 0.16
+BuildRequires:	pong-devel
 URL:		http://peacock.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_sysconfdir	/etc/X11/GNOME
 
 %description
 Peacock is a HTML Editor for GTK+/GNOME. It supports most of basic
@@ -27,22 +32,23 @@ Gtk-XmHTML. Jest na licencji GPL.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-rm -f missing
-%{__gettextize}
-aclocal -I macros
-%{__autoconf}
-%{__automake}
-%configure
+#cat /usr/share/aclocal/intltool.m4 >> aclocal.m4
+#rm -f missing
+#%{__gettextize}
+#intltoolize --copy --force
+#aclocal -I macros
+#%{__autoconf}
+#%{__automake}
+%configure2_13
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT \
-	sysdir=%{_applnkdir}/Office/Editors install
+	desktopdir=%{_applnkdir}/Editors/HTML install
 
 %find_lang %{name} --with-gnome
 
@@ -51,7 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README AUTHORS NEWS TODO ChangeLog THANKS HACKING
+%doc AUTHORS ChangeLog HACKING NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/peacock
+%{_sysconfdir}/gconf/schemas/peacock.schemas
+%{_datadir}/peacock
 %{_pixmapsdir}/peacock
-%{_applnkdir}/Office/Editors/peacock.desktop
+%{_applnkdir}/Editors/HTML/peacock.desktop
