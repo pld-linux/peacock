@@ -2,7 +2,7 @@ Summary:	Peacock, A HTML Editor for GTK+/GNOME
 Summary(pl):	Peacock - edytor HTML pod GTK+/GNOME
 Name:		peacock
 Version:	0.5
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/peacock/%{name}-%{version}.tar.gz
@@ -48,7 +48,7 @@ Gtk-XmHTML. Jest na licencji GPL.
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT \
-	desktopdir=%{_applnkdir}/Office/Editors install
+	desktopdir=%{_applnkdir}/Editors/HTML install
 
 %find_lang %{name} --with-gnome
 
@@ -62,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/peacock.schemas
 %{_datadir}/peacock
 %{_pixmapsdir}/peacock
-%{_applnkdir}/Office/Editors/peacock.desktop
+%{_applnkdir}/Editors/HTML/peacock.desktop
