@@ -7,11 +7,11 @@ License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://dl.sourceforge.net/peacock/%{name}-%{version}.tar.gz
 # Source0-md5:	85283f1c5f6e271ed7f977b18d7504b0
+URL:		http://peacock.sourceforge.net/
 BuildRequires:	libgnomeui-devel >= 2.2.0
 BuildRequires:	libbonoboui-devel >= 2.2.0
 BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	gtksourceview-devel >= 0.5
-URL:		http://peacock.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,6 +34,7 @@ Gtk-XmHTML. Jest na licencji GPL.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
