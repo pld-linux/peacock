@@ -32,18 +32,19 @@ Gtk-XmHTML. Jest na licencji GPL.
 %setup -q
 
 %build
+rm -f missing
 gettextize --copy --force
 aclocal -I macros
 autoconf
+automake -a -c
 %configure
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	sysdir=%{_applnkdir}/Office/Editors
+%{__make} DESTDIR=$RPM_BUILD_ROOT \
+	sysdir=%{_applnkdir}/Office/Editors install
 
 gzip -9nf README AUTHORS NEWS TODO ChangeLog THANKS HACKING
 
