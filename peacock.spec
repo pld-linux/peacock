@@ -35,11 +35,11 @@ Gtk-XmHTML. Jest na licencji GPL.
 %build
 #cat /usr/share/aclocal/intltool.m4 >> aclocal.m4
 #rm -f missing
-#%{__gettextize}
+#%%{__gettextize}
 #intltoolize --copy --force
 #aclocal -I macros
-#%{__autoconf}
-#%{__automake}
+#%%{__autoconf}
+#%%{__automake}
 %configure2_13
 
 %{__make}
