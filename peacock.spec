@@ -6,6 +6,7 @@ Release:	2
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	http://dl.sourceforge.net/peacock/%{name}-%{version}.tar.gz
+# Source0-md5:	0ea84b133936ed1288c588e4b19a74fe
 #BuildRequires:	autoconf
 #BuildRequires:	automake
 BuildRequires:	gdk-pixbuf-devel
