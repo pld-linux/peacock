@@ -48,5 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/peacock
-%{_datadir}/pixmaps/peacock
+%{_pixmapsdir}/peacock
 %{_applnkdir}/Office/Editors/peacock.desktop
