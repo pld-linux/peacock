@@ -4,8 +4,9 @@ Name:		peacock
 Version:	0.2
 Release:	1
 License:	GPL
-Group:		Development/Tools
+Group:		X11/Applications/Editors
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/peacock/%{name}-%{version}.tar.gz
+Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -26,6 +27,7 @@ Gtk-XmHTML. Jest na licencji GPL.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
@@ -41,8 +43,6 @@ aclocal -I macros
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT \
 	sysdir=%{_applnkdir}/Office/Editors install
-
-gzip -9nf README AUTHORS NEWS TODO ChangeLog THANKS HACKING
 
 %find_lang %{name} --with-gnome
 
