@@ -8,13 +8,13 @@ Group:		X11/Applications/Editors
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/peacock/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-libraries.patch
-BuildRequires:	autoconf
-BuildRequires:	automake
+#BuildRequires:	autoconf
+#BuildRequires:	automake
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gdk-pixbuf-gnome-devel
-BuildRequires:	gettext-devel
+#BuildRequires:	gettext-devel
 BuildRequires:	gtkhtml-devel >= 0.4
-BuildRequires:	libglade-devel >= 0.16
+BuildRequires:	libglade-gnome-devel >= 0.16
 BuildRequires:	pong-devel
 URL:		http://peacock.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
