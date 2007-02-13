@@ -1,5 +1,5 @@
 Summary:	Peacock, A HTML Editor for GTK+/GNOME
-Summary(pl.UTF-8):   Peacock - edytor HTML pod GTK+/GNOME
+Summary(pl.UTF-8):	Peacock - edytor HTML pod GTK+/GNOME
 Name:		peacock
 Version:	1.9.1
 Release:	1
