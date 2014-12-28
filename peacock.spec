@@ -8,7 +8,7 @@ Group:		X11/Applications/Editors
 Source0:	http://dl.sourceforge.net/peacock/%{name}-%{version}.tar.gz
 # Source0-md5:	85283f1c5f6e271ed7f977b18d7504b0
 URL:		http://peacock.sourceforge.net/
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtksourceview-devel >= 0.5
 BuildRequires:	libbonoboui-devel >= 2.2.0
 BuildRequires:	libglade2-devel >= 2.0.1
